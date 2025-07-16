@@ -1,0 +1,21 @@
+16.7.2025
+Trained the model with short one off message pairs. The messages were vectorized and cosine was used to find features. 
+Data was should've been fairly balanced for both true and false and the data set was fairly small.
+Results:
+              precision    recall  f1-score   support
+
+           0       0.58      0.17      0.27       183
+           1       0.53      0.88      0.66       195
+
+    accuracy                           0.54       378
+   macro avg       0.56      0.53      0.47       378
+weighted avg       0.56      0.54      0.47       378
+
+Improvements:
+Extract some other feature from the vectors to account for different features? 
+
+Instead of training the model on small phrases add up messages from same user into bigger texts. Rational: Same user usually has common phrases that they use often. Thus it would stand to reason that including more text would bring these phrases more visible for the model.
+
+Balance the data more. Rational: Recall on "Is message from the same user? yes." is very good while the opposite is very bad. 
+
+
