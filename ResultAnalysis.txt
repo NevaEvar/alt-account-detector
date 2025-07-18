@@ -1,6 +1,8 @@
 16.7.2025
 Trained the model with short one off message pairs. The messages were vectorized and cosine was used to find features. 
 Data was should've been fairly balanced for both true and false and the data set was fairly small.
+TF + IDF in combination with random forest was used.
+
 Results:
               precision    recall  f1-score   support
 
@@ -18,4 +20,43 @@ Instead of training the model on small phrases add up messages from same user in
 
 Balance the data more. Rational: Recall on "Is message from the same user? yes." is very good while the opposite is very bad. 
 
+
+17.7.2025
+Checking balance of the data set revealed that the training data has more cases for True then False. Thus balanced the dataset better this time.
+Trained the model with longer message pairs and extracted them from 3 raw text files meaning 3 times the training data compared to the first one.
+Cosine and absolude difference were used this time for the vector features.
+As seen below there was a significant increase in both precision as well as accuracy.
+
+Results:
+              precision    recall  f1-score   support
+
+           0       0.60      0.66      0.63        53
+           1       0.62      0.57      0.59        53
+
+    accuracy                           0.61       106
+   macro avg       0.61      0.61      0.61       106
+weighted avg       0.61      0.61      0.61       106
+
+Imporevements:
+Increasing the training data even more. Rational: Since the increase in training data raised both precision and recall it wouldn't hurt to increase it and see what happens.
+
+
+
+18.7.2025
+Trained with the same longer message pair set but doubled the amount of training data by extracting messages from 6 raw text files instead. 
+Since there is a noticable decrease in percision and recall some form of overfitting might be happening.
+
+Results:
+              precision    recall  f1-score   support
+
+           0       0.58      0.59      0.58       104
+           1       0.58      0.57      0.57       104
+
+    accuracy                           0.58       208
+   macro avg       0.58      0.58      0.58       208
+weighted avg       0.58      0.58      0.58       208
+
+Improvements:
+Better feature engineering. Rational: There's still some wiggle room there.
+Decreasing data set size. Rational: Reduces potential overfitting even if random forest is more resiliant to it.
 
