@@ -13,12 +13,13 @@ Results:
    macro avg       0.56      0.53      0.47       378
 weighted avg       0.56      0.54      0.47       378
 
-Improvements:
+Improvements for the future:
 Extract some other feature from the vectors to account for different features? 
 
 Instead of training the model on small phrases add up messages from same user into bigger texts. Rational: Same user usually has common phrases that they use often. Thus it would stand to reason that including more text would bring these phrases more visible for the model.
 
 Balance the data more. Rational: Recall on "Is message from the same user? yes." is very good while the opposite is very bad. 
+
 
 
 17.7.2025
@@ -37,7 +38,7 @@ Results:
    macro avg       0.61      0.61      0.61       106
 weighted avg       0.61      0.61      0.61       106
 
-Imporevements:
+Improvements for the future:
 Increasing the training data even more. Rational: Since the increase in training data raised both precision and recall it wouldn't hurt to increase it and see what happens.
 
 
@@ -56,7 +57,28 @@ Results:
    macro avg       0.58      0.58      0.58       208
 weighted avg       0.58      0.58      0.58       208
 
-Improvements:
+Improvements for the future:
 Better feature engineering. Rational: There's still some wiggle room there.
 Decreasing data set size. Rational: Reduces potential overfitting even if random forest is more resiliant to it.
+
+
+
+22.7.2025
+Realized a massive issue with the training data building process for False cases. Now fixed to actually contain opposing message pairs. This fix also increased the precision and recall significantly. Also removing the absolute difference feature contributed to the performance positively. 
+Current model has 60 messages per row with an even 50/50 split for message1 and -2. 
+
+Results:
+              precision    recall  f1-score   support
+
+           0       0.68      0.72      0.70       104
+           1       0.70      0.66      0.68       104
+
+    accuracy                           0.69       208
+   macro avg       0.69      0.69      0.69       208
+weighted avg       0.69      0.69      0.69       208
+
+Improvements for the future:
+Better feature engineering. Rational: Didn't improve it for the current version yet.
+Increasing data set size. Rational: Increasing the data size only improved the perfomance on the current version. Testing further wouldn't hurt.
+
 
