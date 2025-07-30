@@ -1,7 +1,7 @@
 16.7.2025
 Trained the model with short one off message pairs. The messages were vectorized and cosine was used to find features. 
 Data was should've been fairly balanced for both true and false and the data set was fairly small.
-TF + IDF in combination with random forest was used.
+TF + IDF in combination with random forest was used. (22.7.2025 correction/addition the properties of random forest weren't utilized until later date that will be stated in the notes.) 
 
 Results:
               precision    recall  f1-score   support
@@ -25,7 +25,7 @@ Balance the data more. Rational: Recall on "Is message from the same user? yes."
 17.7.2025
 Checking balance of the data set revealed that the training data has more cases for True then False. Thus balanced the dataset better this time.
 Trained the model with longer message pairs and extracted them from 3 raw text files meaning 3 times the training data compared to the first one.
-Cosine and absolude difference were used this time for the vector features.
+Cosine and absolude difference were used this time for the vector features. (22.7.2025 correction absolute difference was not given a unique feature rather it was combined to cosine thus not utilizing the random forest at all)
 As seen below there was a significant increase in both precision as well as accuracy.
 
 Results:
@@ -81,4 +81,25 @@ Improvements for the future:
 Better feature engineering. Rational: Didn't improve it for the current version yet.
 Increasing data set size. Rational: Increasing the data size only improved the perfomance on the current version. Testing further wouldn't hurt.
 
+
+
+30.7.2025
+Added more features including punctuation frequency and average word length. The model now is working with 3 features and the performance is significantly improved yet again. The training data size is the same as before but will be later increased to test if there're more gains to make there.
+Additional improvements are that the model is more balansed on precision and recall for both true and false cases. 
+
+Results: 
+              precision    recall  f1-score   support
+
+           0       0.80      0.79      0.79       104
+           1       0.79      0.80      0.79       104
+
+    accuracy                           0.79       208
+   macro avg       0.79      0.79      0.79       208
+weighted avg       0.79      0.79      0.79       208
+
+
+Improvements for the future: 
+Increasing data set size. Rational: discussed above in previouse update.
+Adding more features. Rational: same as before.
+More comprehensive testing. Rational: To make sure that the model is actually performing as well as the results are showing. 
 
