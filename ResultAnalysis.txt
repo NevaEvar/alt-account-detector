@@ -103,3 +103,27 @@ Increasing data set size. Rational: discussed above in previouse update.
 Adding more features. Rational: same as before.
 More comprehensive testing. Rational: To make sure that the model is actually performing as well as the results are showing. 
 
+
+
+31.7.2025
+This section contains take aways from a feedback session and general planing for moving to an actual implemented version of this model. 
+
+Main implemented version challenge will be building the TF-IDF matrix from the targeted servers corpus. Since the matrises vectors will have more or less unit vectors the prediction out come might not be as accurate as in the test cases. To make sure that transitioning into an actually implemented version is smooth the training data needs to be more general to account for more variations.
+
+Potential features brought up in the discussion:
+-Vibe of a user. Current implementation: Vibe is built off of topics, word usage/typing style that are addressed at least partially by the CosineDiff.
+-Repeated gif use. For example nieche gifs. Current implementation: Not done and is harder to do since the data set doesn't contain gifs.
+-Weird acronyms. Current implementation: Is accounted for by the CosineDiff.
+-Minimum time gatekeeping. (when user leaves and joins the server). Current implementation: Is reliant on meta data that isn't in the training data but could be explored further since it's a dead give away.
+-Replying to specific users. Current implementation: Is some what accounted for by CosineDiff. 
+-Style of writing. Current implementation: Is currently accounted for by average word length, average punctuation rate and CosineDiff.
+-Topics. Current implementation: Is somewhat accounted for by the CosineDiff but could be built into it's own feature. 
+-Channel usage. Current implementation: Non existant since the data set has no meta data. But could be a very good give a way as a feature.
+
+Potential problems: 
+-Training data not general enough so it doesn't cover enough writing styles or servers.
+-Better accuracy with people who have more messages typed. (Could be addressed by making the training data rely on less message samples but will decrease performance.
+
+Next stage of development:
+Seeing how the model performs when pulling messages and testing it on actual servers. And after that analyzing results and trying to find areas of improvement.
+
