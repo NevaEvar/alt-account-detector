@@ -127,3 +127,37 @@ Potential problems:
 Next stage of development:
 Seeing how the model performs when pulling messages and testing it on actual servers. And after that analyzing results and trying to find areas of improvement.
 
+
+
+11.8.2025
+Made a trial run on using the model on a smaller discord server where 5 000 messages were scapped and 14 total columns made. Main goal was to test how the model performs in an actual use case.
+Key differences to consider while reviewing results. The cosine difference was effected due to corpus being smaller (built from compleatly different messages) and thus creating different TF-IDF vectors.
+
+Results:
+              precision    recall  f1-score   support
+
+           0       1.00      0.29      0.44         7
+           1       0.58      1.00      0.74         7
+
+    accuracy                           0.64        14
+   macro avg       0.79      0.64      0.59        14
+weighted avg       0.79      0.64      0.59        14
+
+Confusion Matrix:
+[2 5] [TN FP]
+[0 7] [FN TP]
+
+Tested on model with results of:
+              precision    recall  f1-score   support
+
+           0       0.80      0.79      0.79       104
+           1       0.79      0.80      0.79       104
+
+    accuracy                           0.79       208
+   macro avg       0.79      0.79      0.79       208
+weighted avg       0.79      0.79      0.79       208
+
+
+Improvements for future: 
+Address the issue with the different corpus size/context.
+Decreasing model training size. Rational: The model would be more generalized.
