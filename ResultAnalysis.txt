@@ -208,3 +208,5 @@ Done with improving the result representation on implementations. Now everything
 
 
 
+19.8.2025
+Done with adding BuildFullDataset funcions to ModelToolkit and TrainAndTest now includes the model building, testing and graphing. Next is to start working on adding the new feature.
