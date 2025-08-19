@@ -195,3 +195,16 @@ weighted avg       0.71      0.70      0.70        54
 Improvements:
 Making sure the results won't improve by increasing or decreasing the model training dataset. Approach this by testing multiple different server channels and message pairs to different models that have an increasing amount of training data. (preferabliy even different servers). Rational: Finding an approximate generalization point so that other factors can be evaluated. 
 Adding more variance to the training data. Meaning collecting message pairs from different servers more. Rational: Will generalize the data more.
+
+
+
+17.8.2025
+Over all change in approach in the project. Testing will be increased to account for variables. Everything will be graphed out and reported for better afterward analyzis. New feature will also be added to the model utilizing SBERT. 
+
+
+
+19.8.2025
+Done with improving the result representation on implementations. Now everything is graphed out for better documentation. Also generalized TrainModel into a ModelToolkit for clarity and function. Will merge BuildFullDataset in similar fassion. Next step is to have training and testing for the model in the TrainAndTest as well. After which I will be getting into adding the new feature.
+
+
+
