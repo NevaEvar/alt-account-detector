@@ -5,4 +5,4 @@ Code quality is also low since full rewrites will be done later for bachelors th
 Implementation for the full discord bot will be done later after bachelor thesis completion and when the rewrite for the code is done for it. 
 
 Model training program flows from TrainAndTest -> ModelToolkit -> ParseTxtToCsv
-                                                               -> DatasetManipulation
+.                                                               -> DatasetManipulation
